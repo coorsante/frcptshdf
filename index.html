@@ -105,8 +105,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
 .orbit-stage{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center}
 .orbit-stage > svg{width:100%;height:100%;display:block;overflow:visible}
-.orbit-toggle{position:absolute;right:0;bottom:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:999px;font:700 .82rem/1 var(--body);padding:.55rem .85rem;cursor:pointer;display:flex;gap:.4rem;align-items:center}
-.orbit-toggle:hover{border-color:var(--blue)}
 
 /* Orbit animation */
 .spin{transform-box:view-box;transform-origin:340px 310px;animation:orbit 36s linear infinite}
@@ -401,10 +399,6 @@ footer a{color:#fff}
           </g>
         </g>
       </svg>
-      <button class="orbit-toggle" type="button" aria-pressed="false" id="orbitToggle">
-        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="3" height="10" fill="currentColor"/><rect x="7" y="1" width="3" height="10" fill="currentColor"/></svg>
-        <span>Mettre en pause</span>
-      </button>
     </div>
   </div>
 
@@ -733,15 +727,6 @@ footer a{color:#fff}
     btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
   });
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
-
-  // Pause de l’orbite
-  var stage=document.getElementById('orbit'), t=document.getElementById('orbitToggle');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){t.hidden=true;}
-  t.addEventListener('click',function(){
-    var p=stage.classList.toggle('paused');
-    t.setAttribute('aria-pressed',p);
-    t.querySelector('span').textContent=p?'Relancer':'Mettre en pause';
-  });
 
   // Thème clair / sombre
   var root=document.documentElement, key='frcpts-theme';
