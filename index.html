@@ -165,6 +165,21 @@ section.block{padding:clamp(4rem,9vw,7rem) 0}
 .alt .principle{background:var(--paper)}
 .principle h3{font-size:1.15rem;margin-bottom:.6rem;color:var(--blue)}
 .principle p{margin:0;font-size:.98rem;color:var(--muted)}
+/* Principes : apparition en zoom + effet loupe au survol */
+.principle{position:relative;transition:background-color .35s ease}
+.principle::after{content:"";position:absolute;left:1.3rem;right:1.3rem;bottom:1rem;height:3px;border-radius:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.principle h3{transform-origin:left bottom;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.principle p{transition:transform .45s cubic-bezier(.2,.7,.2,1),color .35s ease;transform-origin:left top}
+.principle:hover,.principle:focus-within{background:var(--sky)}
+.principle:hover h3,.principle:focus-within h3{transform:scale(1.08)}
+.principle:hover p,.principle:focus-within p{transform:scale(1.04) translateY(4px);color:var(--ink)}
+.principle:hover::after,.principle:focus-within::after{transform:scaleX(1)}
+.js-zoom .principle{opacity:0;transform:scale(.82)}
+.js-zoom .principle.in{opacity:1;transform:none;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.8,.2,1.15),background-color .35s ease;transition-delay:var(--d,0s)}
+@media (prefers-reduced-motion: reduce){
+  .principle,.principle h3,.principle p,.principle::after{transition:none}
+  .principle:hover h3,.principle:hover p{transform:none}
+}
 .motto{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);margin-top:2.5rem;color:var(--ink);letter-spacing:-.02em}
 @media (max-width:1000px){.principles{grid-template-columns:repeat(2,1fr)}.principle:last-child{grid-column:span 2}}
 @media (max-width:560px){.principles{grid-template-columns:1fr}.principle:last-child{grid-column:auto}}
@@ -726,6 +741,19 @@ footer a{color:#fff}
       entries.forEach(function(en){ if(en.isIntersecting){ io.unobserve(en.target); run(en.target); } });
     },{threshold:.6});
     nums.forEach(function(el){ el.style.minWidth=el.getAttribute('data-count').length+'ch'; el.textContent='0'; io.observe(el); });
+  }
+
+  // Principes : zoom d’apparition échelonné
+  var box=document.querySelector('.principles');
+  if(box && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var cards=box.querySelectorAll('.principle');
+    cards.forEach(function(c,i){ c.style.setProperty('--d',(i*0.12)+'s'); });
+    box.classList.add('js-zoom');
+    var io2=new IntersectionObserver(function(en){
+      if(en[0].isIntersecting){ io2.disconnect(); cards.forEach(function(c){ c.classList.add('in'); });
+        setTimeout(function(){ cards.forEach(function(c){ c.style.removeProperty('--d'); }); },1500); }
+    },{threshold:.25});
+    io2.observe(box);
   }
 
   document.getElementById('year').textContent=new Date().getFullYear();
