@@ -243,15 +243,43 @@ section.block{padding:clamp(4rem,9vw,7rem) 0}
 @media (max-width:860px){.join{grid-template-columns:1fr}}
 
 /* Agenda */
-.timeline{position:relative;display:grid;gap:0;max-width:880px}
-.event{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--line)}
-.event:last-child{border-bottom:1px solid var(--line)}
-.when{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--blue)}
-.when small{display:block;font-family:var(--body);font-weight:400;font-size:.9rem;color:var(--muted)}
+.agenda-sec{background:radial-gradient(90% 70% at 100% 0%,var(--sky-2) 0%,transparent 60%),linear-gradient(180deg,var(--paper),var(--sky))}
+.timeline{position:relative;display:grid;gap:1.1rem;max-width:920px;padding-left:46px}
+.timeline::before{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:4px;border-radius:4px;background:var(--line)}
+.timeline::after{content:"";position:absolute;left:14px;top:10px;bottom:10px;width:4px;border-radius:4px;background:linear-gradient(var(--sun),var(--blue));transform:scaleY(var(--prog,1));transform-origin:top;transition:transform 1.6s cubic-bezier(.3,.7,.2,1)}
+.event{position:relative;display:grid;grid-template-columns:150px 1fr;gap:1.6rem;align-items:center;padding:1.4rem 1.6rem;background:var(--paper);border:1px solid var(--line);border-radius:22px;transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s}
+.event::before{content:"";position:absolute;left:-41px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--paper);border:4px solid var(--blue);box-sizing:border-box;z-index:1;transition:transform .3s,background .3s}
+.event:first-child::before{border-color:var(--sun);background:var(--sun);animation:dotPulse 1.8s ease-out infinite}
+.event:hover{transform:translateX(8px);box-shadow:0 22px 44px -26px rgba(14,71,176,.5);border-color:var(--blue)}
+.event:hover::before{transform:scale(1.3);background:var(--blue)}
+.event:first-child:hover::before{background:var(--sun)}
+.event:first-child{border:2px solid var(--sun);box-shadow:0 18px 40px -24px rgba(255,200,61,.8)}
+.when{font-family:var(--display);font-weight:700;color:var(--blue);text-align:center}
+.when small{display:block;font-family:var(--body);font-weight:700;font-size:.88rem;color:var(--muted);margin-top:.45rem}
+.cal{perspective:400px}
+.cal-m,.cal-d{display:block;margin-inline:auto;width:110px;text-align:center}
+.cal-m{background:var(--blue);color:#fff;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.35rem 0;border-radius:14px 14px 0 0}
+.cal-d{background:#fff;color:var(--navy);font-size:3.1rem;line-height:1;font-weight:800;padding:.4rem 0 .5rem;border:2px solid var(--blue);border-top:0;border-radius:0 0 14px 14px;transform-origin:top;box-shadow:0 10px 20px -12px rgba(14,71,176,.5)}
+.event:hover .cal-d{animation:calFlip .7s cubic-bezier(.3,1.4,.5,1)}
+.live-b{display:inline-flex;align-items:center;gap:.5rem;background:var(--sky);color:var(--blue);font-size:1rem;padding:.55rem .95rem;border-radius:999px;border:1px solid var(--line)}
+.live-b i{position:relative;width:10px;height:10px;border-radius:50%;background:#1DB36B}
+.live-b i::after{content:"";position:absolute;inset:0;border-radius:50%;background:#1DB36B;animation:liveP 1.6s ease-out infinite}
 .event h3{margin-bottom:.35rem}
 .event p{margin:0;color:var(--muted)}
 .tag{display:inline-block;font-size:.8rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;background:var(--sun);color:var(--sun-ink);margin-left:.5rem;vertical-align:middle}
-@media (max-width:640px){.event{grid-template-columns:1fr;gap:.4rem}}
+.event .tag{animation:tagBounce 2.4s ease-in-out infinite}
+.countdown{display:inline-block;font-family:var(--body);font-size:.8rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;background:var(--blue);color:var(--on-blue);vertical-align:middle;margin-left:.2rem}
+.js-agenda .event{opacity:0;transform:translateX(-40px)}
+.js-agenda .event.in{opacity:1;transform:none;transition:opacity .6s ease var(--d,0s),transform .7s cubic-bezier(.2,.9,.25,1.15) var(--d,0s),box-shadow .4s,border-color .3s}
+.js-agenda .event.in:hover{transform:translateX(8px);transition-delay:0s}
+.js-agenda .cal-d{transform:rotateX(-90deg)}
+.js-agenda .event.in .cal-d{transform:none;transition:transform .8s cubic-bezier(.3,1.5,.5,1) calc(var(--d,0s) + .35s)}
+@keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(255,200,61,.7)}100%{box-shadow:0 0 0 14px rgba(255,200,61,0)}}
+@keyframes liveP{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.8);opacity:0}}
+@keyframes tagBounce{0%,80%,100%{transform:none}86%{transform:translateY(-4px) rotate(-4deg)}92%{transform:translateY(0) rotate(3deg)}}
+@keyframes calFlip{0%{transform:rotateX(0)}45%{transform:rotateX(-80deg)}100%{transform:rotateX(0)}}
+@media (max-width:640px){.timeline{padding-left:34px}.timeline::before,.timeline::after{left:8px}.event{grid-template-columns:1fr;gap:.8rem;padding:1.2rem}.event::before{left:-35px;top:2.2rem}.when{text-align:left}.cal-m,.cal-d{margin-inline:0}}
+@media (prefers-reduced-motion: reduce){.event,.event::before,.timeline::after{transition:none;animation:none}.live-b i::after,.event .tag{animation:none}.event:hover .cal-d{animation:none}}
 
 /* Actus */
 .news{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.4rem}
@@ -266,6 +294,23 @@ section.block{padding:clamp(4rem,9vw,7rem) 0}
 .post.feature a{color:var(--on-blue)}
 .post a:hover{text-decoration:underline}
 @media (max-width:900px){.news{grid-template-columns:1fr}}
+/* Actualités : entrée en cascade + survol animé */
+.post{position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease,border-color .3s}
+.post::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.post::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-18deg);pointer-events:none}
+.post:hover,.post:focus-within{transform:translateY(-8px) scale(1.02);box-shadow:0 26px 50px -24px rgba(14,71,176,.45);border-color:var(--blue)}
+.post:hover::before,.post:focus-within::before{transform:scaleX(1)}
+.post:hover::after{animation:postShine .9s ease-out}
+.post a svg,.post a .arr{transition:transform .3s}
+.post:hover a{gap:.7rem}
+.post.feature::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent)}
+.post.feature{animation:featGlow 4s ease-in-out infinite}
+.js-news .post{opacity:0;transform:translateY(50px) rotate(-1.5deg)}
+.js-news .post.in{opacity:1;transform:none;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.9,.25,1.2),box-shadow .45s ease;transition-delay:var(--d,0s)}
+.js-news .post.in:hover{transform:translateY(-8px) scale(1.02);transition-delay:0s}
+@keyframes postShine{to{left:130%}}
+@keyframes featGlow{0%,100%{box-shadow:0 0 0 0 rgba(14,71,176,0)}50%{box-shadow:0 18px 44px -18px rgba(14,71,176,.55)}}
+@media (prefers-reduced-motion: reduce){.post,.post::before{transition:none}.post:hover{transform:none}.post:hover::after,.post.feature{animation:none}}
 
 /* Ensemble */
 .together{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -625,7 +670,7 @@ footer a{color:#fff}
 </section>
 
 <!-- Agenda -->
-<section class="block" id="agenda">
+<section class="block agenda-sec" id="agenda">
   <div class="wrap">
     <div class="section-head">
       <h2>Agenda : nos évènements</h2>
@@ -633,15 +678,15 @@ footer a{color:#fff}
     </div>
     <div class="timeline">
       <article class="event">
-        <div class="when">10 décembre 2026<small>Lille</small></div>
-        <div><h3>Tour de France des CPTS <span class="tag">À venir</span></h3><p>Étape lilloise du Tour de France des CPTS : la Fédération participe activement au comité de pilotage.</p></div>
+        <div class="when cal"><span class="cal-m">Déc. 2026</span><span class="cal-d">10</span><small>Lille</small></div>
+        <div><h3>Tour de France des CPTS <span class="tag">À venir</span> <span class="countdown" data-date="2026-12-10" hidden></span></h3><p>Étape lilloise du Tour de France des CPTS : la Fédération participe activement au comité de pilotage.</p></div>
       </article>
       <article class="event">
-        <div class="when">En cours<small>Région</small></div>
+        <div class="when live"><span class="live-b"><i></i>En cours</span><small>Région</small></div>
         <div><h3>ARS et Inter-URPS</h3><p>Échanges avec l’ARS et l’Inter-URPS pour présenter la Fédération et construire les premières collaborations.</p></div>
       </article>
       <article class="event">
-        <div class="when">En cours<small>Nord</small></div>
+        <div class="when live"><span class="live-b"><i></i>En cours</span><small>Nord</small></div>
         <div><h3>PCR « Enfance protégée »</h3><p>Suivi du parcours coordonné renforcé piloté dans le Nord, en lien avec l’Inter-CPTS du Nord et les DAC.</p></div>
       </article>
     </div>
@@ -784,6 +829,39 @@ footer a{color:#fff}
         setTimeout(function(){ cards.forEach(function(c){ c.style.removeProperty('--d'); }); },1500); }
     },{threshold:.25});
     io2.observe(box);
+  }
+
+  // Actualités : apparition en cascade
+  var news=document.querySelector('.news');
+  if(news && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var posts=news.querySelectorAll('.post');
+    posts.forEach(function(c,i){ c.style.setProperty('--d',(i*0.15)+'s'); });
+    news.classList.add('js-news');
+    var io3=new IntersectionObserver(function(en){
+      if(en[0].isIntersecting){ io3.disconnect(); posts.forEach(function(c){ c.classList.add('in'); });
+        setTimeout(function(){ posts.forEach(function(c){ c.style.removeProperty('--d'); }); },1600); }
+    },{threshold:.2});
+    io3.observe(news);
+  }
+
+  // Agenda : compte à rebours + apparition de la frise
+  document.querySelectorAll('.countdown[data-date]').forEach(function(el){
+    var d=new Date(el.getAttribute('data-date')+'T00:00:00'), now=new Date(); now.setHours(0,0,0,0);
+    var n=Math.round((d-now)/864e5);
+    if(n>1){el.textContent='Dans '+n+' jours';el.hidden=false;}
+    else if(n===1){el.textContent='Demain';el.hidden=false;}
+    else if(n===0){el.textContent='Aujourd’hui';el.hidden=false;}
+  });
+  var tl=document.querySelector('.timeline');
+  if(tl && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var evs=tl.querySelectorAll('.event');
+    evs.forEach(function(c,i){ c.style.setProperty('--d',(0.25+i*0.22)+'s'); });
+    tl.classList.add('js-agenda'); tl.style.setProperty('--prog','0');
+    var io4=new IntersectionObserver(function(en){
+      if(en[0].isIntersecting){ io4.disconnect(); tl.style.setProperty('--prog','1'); evs.forEach(function(c){ c.classList.add('in'); });
+        setTimeout(function(){ evs.forEach(function(c){ c.style.removeProperty('--d'); }); },2200); }
+    },{threshold:.2});
+    io4.observe(tl);
   }
 
   document.getElementById('year').textContent=new Date().getFullYear();
