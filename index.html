@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FRCPTS Hauts-de-France · Fédération Régionale des CPTS</title>
+<meta name="description" content="La Fédération Régionale des CPTS Hauts-de-France rassemble les Communautés Professionnelles Territoriales de Santé du Nord, du Pas-de-Calais, de la Somme, de l’Aisne et de l’Oise.">
+<meta property="og:title" content="FRCPTS Hauts-de-France">
+<meta property="og:description" content="Une voix régionale commune pour les CPTS des Hauts-de-France.">
+<meta property="og:image" content="assets/logo-frcpts.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230E47B0'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0E47B0;
+  --blue-strong:#0A3687;
+  --navy:#0A2463;
+  --ink:#13203D;
+  --muted:#4A5878;
+  --sky:#EAF1FC;
+  --sky-2:#D6E4FA;
+  --paper:#FFFFFF;
+  --sun:#FFC83D;
+  --sun-ink:#3A2A00;
+  --line:#C9D7F0;
+  --on-blue:#FFFFFF;
+  --badge:#0E47B0;
+  --map:#0D3E9E;
+  --map-2:#0A2F80;
+  --shadow:0 18px 40px -22px rgba(10,36,99,.45);
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --wrap:1180px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --blue:#6E9CFF; --blue-strong:#9DBBFF; --navy:#0B1A3F; --ink:#E7EDFA; --muted:#AEBBD8;
+    --sky:#0F1F45; --sky-2:#16295A; --paper:#081430; --line:#24386A; --on-blue:#081430;
+    --badge:#1F5BD0; --map:#1A4BB5; --map-2:#123A92; --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --blue:#6E9CFF; --blue-strong:#9DBBFF; --navy:#0B1A3F; --ink:#E7EDFA; --muted:#AEBBD8;
+  --sky:#0F1F45; --sky-2:#16295A; --paper:#081430; --line:#24386A; --on-blue:#081430;
+  --badge:#1F5BD0; --map:#1A4BB5; --map-2:#123A92; --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 84px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:700;letter-spacing:-.005em}
+p{margin:0 0 1em}
+.lead{font-size:clamp(1.12rem,1.6vw,1.28rem);color:var(--muted);max-width:60ch}
+.skip{position:absolute;left:-999px;top:0;background:var(--sun);color:var(--sun-ink);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+
+/* Header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px)}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{font-family:var(--display);font-size:1.15rem;font-weight:800;display:block;line-height:1}
+.brand span{font-size:.82rem;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.97rem}
+.nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:700 1rem/1 var(--body);text-decoration:none;padding:.95rem 1.35rem;border-radius:999px;transition:transform .15s ease,background .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-sun{background:var(--sun);color:var(--sun-ink)}
+.btn-sun:hover{background:#FFD566}
+.btn-blue{background:var(--blue);color:var(--on-blue)}
+.btn-blue:hover{background:var(--blue-strong)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--blue)}
+.nav .btn{padding:.7rem 1.1rem;color:var(--sun-ink)}
+.menu-btn{display:none;background:none;border:0;color:var(--ink);padding:.4rem;cursor:pointer}
+@media (max-width:900px){
+  .menu-btn{display:block}
+  .nav{position:absolute;left:0;right:0;top:72px;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem clamp(1.1rem,4vw,2.5rem) 1.2rem;display:none}
+  .nav.open{display:flex}
+  .nav a{padding:.8rem 0;border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:1rem;justify-content:center;border-bottom:0}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:clamp(2.5rem,6vw,5rem) 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5.1rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.4rem}
+.hero .lead{margin-bottom:2rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.orbit-stage{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:center}
+.orbit-stage > svg{width:100%;height:100%;display:block;overflow:visible}
+.orbit-toggle{position:absolute;right:0;bottom:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:999px;font:700 .82rem/1 var(--body);padding:.55rem .85rem;cursor:pointer;display:flex;gap:.4rem;align-items:center}
+.orbit-toggle:hover{border-color:var(--blue)}
+
+/* Orbit animation */
+.spin{transform-box:view-box;transform-origin:340px 310px;animation:orbit 36s linear infinite}
+.counter{transform-box:fill-box;transform-origin:center;animation:orbit 36s linear infinite reverse}
+.paused .spin,.paused .counter{animation-play-state:paused}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.badge-ring{fill:var(--badge);stroke:#fff;stroke-width:9}
+.map-shape{fill:url(#mapGrad);stroke:#fff;stroke-width:9;stroke-linejoin:round}
+.ring{fill:none;stroke:var(--badge);stroke-width:26}
+.ring-edge{fill:none;stroke:#fff;stroke-width:38}
+.intro .map-shape{animation:mapIn 1s cubic-bezier(.2,.7,.2,1) both}
+.intro .spin{animation:orbitIn 1.4s cubic-bezier(.2,.7,.2,1) both, orbit 36s linear 1.4s infinite}
+@keyframes mapIn{from{opacity:0;transform:scale(.94);transform-origin:center}to{opacity:1}}
+@keyframes orbitIn{from{opacity:0;transform:rotate(-120deg) scale(.85)}to{opacity:1;transform:rotate(0) scale(1)}}
+.intro .counter{animation:counterIn 1.4s cubic-bezier(.2,.7,.2,1) both, orbit 36s linear 1.4s infinite reverse}
+@keyframes counterIn{from{transform:rotate(120deg)}to{transform:rotate(0)}}
+@media (prefers-reduced-motion: reduce){
+  .spin,.counter,.intro .spin,.intro .counter,.intro .map-shape{animation:none}
+}
+
+.dept-strip{margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)}
+.dept-strip .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 2.2rem;padding-top:1.4rem;padding-bottom:1.6rem}
+.fig{display:flex;align-items:baseline;gap:.6rem}
+.fig b{font-family:var(--display);font-size:2.4rem;font-weight:800;color:var(--blue);line-height:1}
+.fig span{color:var(--muted);font-size:.98rem;max-width:16ch;line-height:1.3}
+.depts{margin-left:auto;display:flex;flex-wrap:wrap;gap:.45rem}
+.depts li{list-style:none;background:var(--sky);color:var(--ink);padding:.35rem .8rem;border-radius:999px;font-size:.9rem;font-weight:700}
+.depts{padding:0;margin-top:0;margin-bottom:0}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.orbit-stage{max-width:420px;order:-1}.depts{margin-left:0}}
+
+/* Sections */
+section.block{padding:clamp(4rem,9vw,7rem) 0}
+.alt{background:var(--sky)}
+.deep{background:var(--navy);color:#E7EDFA}
+.deep .lead,.deep p{color:#C3D0EC}
+.deep h2,.deep h3{color:#fff}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem 4rem;align-items:end;margin-bottom:clamp(2.2rem,5vw,3.5rem)}
+.section-head .lead{margin:0}
+@media (max-width:800px){.section-head{grid-template-columns:1fr}}
+
+/* Qui sommes-nous */
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem)}
+.story-text p{max-width:62ch}
+.founded{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,1.9rem);font-weight:700;line-height:1.25;color:var(--ink);margin-bottom:1.4rem;max-width:30ch}
+.axes{display:grid;gap:0;border-top:2px solid var(--ink)}
+.axe{display:grid;grid-template-columns:52px 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.axe svg{width:44px;height:44px;color:var(--blue)}
+.axe h3{margin-bottom:.3rem}
+.axe p{margin:0;color:var(--muted)}
+@media (max-width:860px){.story{grid-template-columns:1fr}}
+
+/* Principes */
+.principles{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.principle{background:var(--paper);padding:1.6rem 1.3rem 1.8rem}
+.alt .principle{background:var(--paper)}
+.principle h3{font-size:1.15rem;margin-bottom:.6rem;color:var(--blue)}
+.principle p{margin:0;font-size:.98rem;color:var(--muted)}
+.motto{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);margin-top:2.5rem;color:var(--ink);letter-spacing:-.02em}
+@media (max-width:1000px){.principles{grid-template-columns:repeat(2,1fr)}.principle:last-child{grid-column:span 2}}
+@media (max-width:560px){.principles{grid-template-columns:1fr}.principle:last-child{grid-column:auto}}
+
+/* Gouvernance */
+.gov{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.bureau{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.member{display:flex;gap:.9rem;align-items:center;padding:1rem 1.1rem;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.member.lead-role{grid-column:span 1;background:rgba(255,200,61,.12);border-color:rgba(255,200,61,.35)}
+.avatar{width:48px;height:48px;border-radius:50%;flex:none;display:grid;place-items:center;font:800 1rem/1 var(--display);background:#1F5BD0;color:#fff;border:3px solid #fff}
+.lead-role .avatar{background:var(--sun);color:var(--sun-ink)}
+.member b{display:block;color:#fff;font-size:1.02rem}
+.member span{color:#AFC0E4;font-size:.9rem}
+.gov-note{margin-top:1.4rem;font-size:.95rem}
+@media (max-width:860px){.gov{grid-template-columns:1fr}}
+@media (max-width:520px){.bureau{grid-template-columns:1fr}}
+
+/* Rejoindre */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,3vw,2.5rem);margin-bottom:clamp(3rem,6vw,4.5rem)}
+.why-item svg{width:56px;height:56px;margin-bottom:1rem}
+.why-item h3{margin-bottom:.5rem}
+.why-item p{color:var(--muted);margin:0}
+@media (max-width:820px){.why{grid-template-columns:1fr}}
+.join{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:var(--paper);border:1px solid var(--line)}
+.join-left{padding:clamp(1.8rem,4vw,3rem);background:var(--blue);color:var(--on-blue)}
+.join-left h3{font-size:clamp(1.6rem,2.6vw,2.1rem);margin-bottom:1.2rem;color:var(--on-blue)}
+.college{padding:1rem 0;border-top:1px solid color-mix(in srgb,var(--on-blue) 25%,transparent)}
+.college b{display:block;font-size:1.05rem}
+.college p{margin:.3rem 0 0;opacity:.88;font-size:.97rem}
+.fee{margin-top:1.5rem;display:flex;align-items:baseline;gap:.6rem}
+.fee strong{font-family:var(--display);font-size:3rem;line-height:1}
+.fee span{opacity:.88;font-size:.95rem;max-width:22ch;line-height:1.3}
+.join-right{padding:clamp(1.8rem,4vw,3rem)}
+.join-right h3{margin-bottom:1.3rem}
+.steps{list-style:none;padding:0;margin:0 0 1.8rem;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:.9rem;padding:.75rem 0;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--sky);color:var(--blue);font:800 1rem/1 var(--display)}
+.steps li p{margin:0;color:var(--muted);font-size:.97rem}
+.steps li b{color:var(--ink)}
+@media (max-width:860px){.join{grid-template-columns:1fr}}
+
+/* Agenda */
+.timeline{position:relative;display:grid;gap:0;max-width:880px}
+.event{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.event:last-child{border-bottom:1px solid var(--line)}
+.when{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--blue)}
+.when small{display:block;font-family:var(--body);font-weight:400;font-size:.9rem;color:var(--muted)}
+.event h3{margin-bottom:.35rem}
+.event p{margin:0;color:var(--muted)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;padding:.2rem .6rem;border-radius:999px;background:var(--sun);color:var(--sun-ink);margin-left:.5rem;vertical-align:middle}
+@media (max-width:640px){.event{grid-template-columns:1fr;gap:.4rem}}
+
+/* Actus */
+.news{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.4rem}
+.post{display:flex;flex-direction:column;background:var(--paper);border-radius:22px;padding:1.6rem;border:1px solid var(--line)}
+.post.feature{background:var(--blue);color:var(--on-blue);border-color:transparent}
+.post.feature p,.post.feature time{color:var(--on-blue);opacity:.9}
+.post time{font-size:.9rem;color:var(--muted);font-weight:700}
+.post h3{margin:.5rem 0 .7rem}
+.post.feature h3{font-size:1.7rem}
+.post p{color:var(--muted);flex:1}
+.post a{font-weight:700;text-decoration:none;display:inline-flex;gap:.4rem;align-items:center}
+.post.feature a{color:var(--on-blue)}
+.post a:hover{text-decoration:underline}
+@media (max-width:900px){.news{grid-template-columns:1fr}}
+
+/* Ensemble */
+.together{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.aud{padding:2rem 1.7rem;border-radius:22px;text-decoration:none;color:var(--ink);background:var(--sky);border:2px solid transparent;display:flex;flex-direction:column;gap:.6rem;transition:border-color .15s}
+.aud:hover{border-color:var(--blue)}
+.aud svg{width:48px;height:48px;color:var(--blue)}
+.aud h3{font-size:1.4rem}
+.aud p{margin:0;color:var(--muted)}
+.aud .go{margin-top:auto;padding-top:.6rem;font-weight:700;color:var(--blue)}
+@media (max-width:860px){.together{grid-template-columns:1fr}}
+
+/* Voix collective */
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.voice blockquote{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-.02em;color:#fff}
+.partners{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:1.4rem 0 0}
+.partners li{list-style:none;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.45rem .95rem;font-weight:700;font-size:.93rem;color:#fff}
+@media (max-width:860px){.voice{grid-template-columns:1fr}}
+
+/* Statuts */
+.statuts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:2rem}
+.art{background:var(--paper);padding:1.5rem 1.4rem}
+.art small{display:block;color:var(--blue);font-weight:700;font-size:.88rem;margin-bottom:.35rem}
+.art h3{font-size:1.15rem;margin-bottom:.5rem}
+.art p{margin:0;color:var(--muted);font-size:.97rem}
+.doc-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;justify-content:space-between}
+.doc-row p{margin:0;color:var(--muted);max-width:52ch}
+@media (max-width:900px){.statuts-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.statuts-grid{grid-template-columns:1fr}}
+
+/* Contact / footer */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.contact-card{background:var(--sky);border-radius:24px;padding:clamp(1.6rem,3vw,2.4rem)}
+.contact-card dl{margin:0;display:grid;gap:1.1rem}
+.contact-card dt{font-weight:700;font-size:.92rem;color:var(--muted)}
+.contact-card dd{margin:.15rem 0 0;font-size:1.08rem}
+.contact-card a{font-weight:700}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+footer{background:var(--navy);color:#C3D0EC;padding:2.5rem 0;font-size:.93rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center}
+footer a{color:#fff}
+.theme-btn{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:.45rem .9rem;font:700 .85rem/1 var(--body);cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="FRCPTS Hauts-de-France, accueil">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0E47B0"/><path d="M26 14h12v12h12v12H38v12H26V38H14V26h12z" fill="#fff"/></svg>
+      <div><b>FRCPTS</b><span>Hauts-de-France</span></div>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#federation">Présentation</a>
+      <a href="#gouvernance">Gouvernance</a>
+      <a href="#statuts">Statuts</a>
+      <a href="#actualites">Actualités</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-sun" href="#adherer">Adhérer</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Les CPTS des Hauts-de-France avancent ensemble.</h1>
+      <p class="lead">La Fédération Régionale des CPTS rassemble les Communautés Professionnelles Territoriales de Santé du Nord, du Pas-de-Calais, de la Somme, de l’Aisne et de l’Oise, pour s’entraider et porter une voix régionale commune.</p>
+      <div class="cta-row">
+        <a class="btn btn-sun" href="#adherer">Rejoindre la Fédération</a>
+        <a class="btn btn-ghost" href="#actualites">Voir nos actualités</a>
+      </div>
+    </div>
+
+    <div class="orbit-stage intro" id="orbit">
+      <svg viewBox="0 0 600 600" role="img" aria-labelledby="logoTitle">
+        <title id="logoTitle">Logo de la FRCPTS Hauts-de-France : la carte de la région entourée d’un cercle reliant des icônes de santé</title>
+        <defs>
+          <linearGradient id="mapGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--map)"/>
+            <stop offset="1" stop-color="var(--map-2)"/>
+          </linearGradient>
+          <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0A2463" flood-opacity=".22"/>
+          </filter>
+        </defs>
+
+        <!-- Carte stylisée des Hauts-de-France -->
+        <path class="map-shape" transform="translate(-55 -10)" filter="url(#soft)" d="M150 70 L196 62 L232 48 L262 44 L270 62 L268 84 L290 96 L300 118 L334 110 L352 128 L362 152 L392 160 L420 170 L436 196 L452 214 L470 218 L486 236 L480 262 L492 286 L478 312 L486 340 L470 362 L476 392 L458 414 L466 444 L446 470 L424 486 L410 512 L384 530 L360 520 L330 534 L296 526 L266 534 L240 520 L210 528 L182 516 L166 492 L170 462 L156 432 L162 404 L146 378 L150 350 L136 322 L118 296 L96 282 L104 262 L88 244 L96 222 L84 198 L92 172 L86 146 L96 122 L118 98 Z"/>
+
+        <!-- Cercle reliant -->
+        <circle class="ring-edge" cx="340" cy="310" r="170"/>
+        <circle class="ring" cx="340" cy="310" r="170"/>
+
+        <!-- Icônes en orbite -->
+        <g class="spin">
+          <!-- Croix (haut gauche) -->
+          <g transform="translate(220 190)">
+            <g class="counter">
+              <circle class="badge-ring" r="72" filter="url(#soft)"/>
+              <path d="M-15 -40h30v25h25v30h-25v25h-30v-25h-25v-30h25z" fill="#fff"/>
+            </g>
+          </g>
+          <!-- Stéthoscope (haut droite) -->
+          <g transform="translate(460 190)">
+            <g class="counter">
+              <circle class="badge-ring" r="62" filter="url(#soft)"/>
+              <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M-24 -30v16c0 16 10 26 22 26s22-10 22-26v-16"/>
+                <path d="M-2 12v8c0 12 8 20 18 20s16-8 16-18v-4"/>
+                <circle cx="32" cy="12" r="9"/>
+              </g>
+              <circle cx="-24" cy="-32" r="5" fill="#fff"/>
+              <circle cx="20" cy="-32" r="5" fill="#fff"/>
+            </g>
+          </g>
+          <!-- Soignant (bas droite) -->
+          <g transform="translate(460 430)">
+            <g class="counter">
+              <circle class="badge-ring" r="62" filter="url(#soft)"/>
+              <path d="M-16 -36h32v10c0 18-7 30-16 30s-16-12-16-30z" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M-16 -26c4-14 28-14 32 0" fill="#fff"/>
+              <path d="M-36 34c4-16 16-22 26-24l10 14 10-14c10 2 22 8 26 24c-14 8-58 8-72 0z" fill="#fff"/>
+            </g>
+          </g>
+          <!-- Maison de santé (bas gauche) -->
+          <g transform="translate(220 430)">
+            <g class="counter">
+              <circle class="badge-ring" r="66" filter="url(#soft)"/>
+              <path d="M-36 -2 L0 -36 L36 -2 L28 -2 L28 34 L-28 34 L-28 -2 Z" fill="#fff"/>
+              <path d="M-5 -2h10v9h9v10h-9v9h-10v-9h-9v-10h9z" fill="var(--badge)"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <button class="orbit-toggle" type="button" aria-pressed="false" id="orbitToggle">
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="3" height="10" fill="currentColor"/><rect x="7" y="1" width="3" height="10" fill="currentColor"/></svg>
+        <span>Mettre en pause</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="dept-strip">
+    <div class="wrap">
+      <div class="fig"><b>31</b><span>CPTS fondatrices réunies le 26 mai 2026</span></div>
+      <div class="fig"><b>5</b><span>départements, du Nord à l’Oise</span></div>
+      <div class="fig"><b>1</b><span>voix régionale pour peser ensemble</span></div>
+      <ul class="depts" aria-label="Départements couverts">
+        <li>Nord</li><li>Pas-de-Calais</li><li>Somme</li><li>Aisne</li><li>Oise</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Qui sommes-nous -->
+<section class="block alt" id="federation">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Une fédération née des territoires</h2>
+      <p class="lead">Association loi 1901 créée en 2026, la FRCPTS HdF offre aux CPTS un espace commun d’échange, de soutien, de coopération et de représentation, en lien avec la Fédération Nationale des CPTS.</p>
+    </div>
+    <div class="story">
+      <div class="story-text">
+        <p class="founded">Le 26 mai 2026, 31 des 34 CPTS réunies ont approuvé la création de la Fédération, soit environ la moitié des CPTS de la région.</p>
+        <p>Les CPTS émanent de l’initiative des acteurs de santé d’un territoire, au premier rang desquels les professionnels de santé libéraux. Elles organisent une réponse collective aux besoins de santé de la population : coordination pluriprofessionnelle, accès aux soins, prévention et parcours.</p>
+        <p>Dans les Hauts-de-France, des dynamiques inter-CPTS existaient déjà, avec des modalités variables selon les territoires. La Fédération les relie, sans jamais se substituer à elles : chaque CPTS reste souveraine dans sa gouvernance et ses projets.</p>
+        <p><a href="docs/statuts-frcpts-hdf.pdf">Lire les statuts (PDF)</a></p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1rem">Nos 4 axes fédérateurs</h3>
+        <div class="axes">
+          <div class="axe">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="24" r="7"/><circle cx="34" cy="14" r="6"/><circle cx="34" cy="34" r="6"/><path d="M20 21l8-4M20 27l8 4"/></svg>
+            <div><h3>Partenariats régionaux et nationaux</h3><p>Des relations structurées avec l’ARS, les URPS, les DAC, la FEMAS et la Fédération nationale des CPTS.</p></div>
+          </div>
+          <div class="axe">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 28l8-8 6 4 10-10 8 6"/><path d="M8 38h32"/><path d="M30 14h6v6"/></svg>
+            <div><h3>Appui aux équipes</h3><p>Médiation, facilitation et appui méthodologique pour les CPTS.</p></div>
+          </div>
+          <div class="axe">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M8 24h32M24 8c5 5 7 10 7 16s-2 11-7 16M24 8c-5 5-7 10-7 16s2 11 7 16"/></svg>
+            <div><h3>Réseau d’interconnaissance</h3><p>Une circulation régulière de l’information entre national, régional et territoires.</p></div>
+          </div>
+          <div class="axe">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 20v8h6l14 8V12l-14 8z"/><path d="M34 18c2 2 3 4 3 6s-1 4-3 6M38 14c3 3 5 6 5 10s-2 7-5 10"/></svg>
+            <div><h3>Communication grand public</h3><p>Expliquer le rôle des CPTS et valoriser l’exercice coordonné.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Principes -->
+<section class="block" id="principes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nos principes directeurs</h2>
+      <p class="lead">Cinq engagements inscrits dans nos statuts, qui guident chacune de nos actions.</p>
+    </div>
+    <div class="principles">
+      <div class="principle"><h3>Autonomie</h3><p>Chaque CPTS reste souveraine dans sa gouvernance, ses projets et ses décisions.</p></div>
+      <div class="principle"><h3>Non-substitution</h3><p>La Fédération n’intervient pas à la place des CPTS ni de leurs instances.</p></div>
+      <div class="principle"><h3>Indépendance</h3><p>Une gouvernance et des prises de position autonomes.</p></div>
+      <div class="principle"><h3>Représentation équilibrée</h3><p>Les cinq départements et la diversité des CPTS, rurales comme urbaines.</p></div>
+      <div class="principle"><h3>Complémentarité</h3><p>Une coopération ouverte avec les partenaires du système de santé.</p></div>
+    </div>
+    <p class="motto">Au service des CPTS, jamais à leur place.</p>
+  </div>
+</section>
+
+<!-- Gouvernance -->
+<section class="block deep" id="gouvernance">
+  <div class="wrap gov">
+    <div>
+      <h2>Notre gouvernance</h2>
+      <p class="lead" style="margin-top:1.2rem">Un bureau élu à l’unanimité le 7 juillet 2026, et un Conseil d’administration actif et participatif, porteur de dossiers thématiques.</p>
+      <p class="gov-note">La co-présidence et la répartition des fonctions entre plusieurs CPTS évitent toute concentration des responsabilités, comme le prévoient nos statuts.</p>
+    </div>
+    <div class="bureau">
+      <div class="member lead-role"><div class="avatar" aria-hidden="true">LK</div><div><b>Lory Konrad</b><span>Coprésidente</span></div></div>
+      <div class="member lead-role"><div class="avatar" aria-hidden="true">SD</div><div><b>Sylvain Duriez</b><span>Coprésident</span></div></div>
+      <div class="member"><div class="avatar" aria-hidden="true">CC</div><div><b>Charles Charani</b><span>Vice-président</span></div></div>
+      <div class="member"><div class="avatar" aria-hidden="true">GB</div><div><b>Gaël Boulanger</b><span>Secrétaire général</span></div></div>
+      <div class="member"><div class="avatar" aria-hidden="true">RM</div><div><b>Ryad Maudarbaccus</b><span>Secrétaire général adjoint</span></div></div>
+      <div class="member"><div class="avatar" aria-hidden="true">JH</div><div><b>Jean-Benoît Hebbinckuys</b><span>Trésorier</span></div></div>
+      <div class="member"><div class="avatar" aria-hidden="true">MR</div><div><b>Mathieu Roussen</b><span>Trésorier adjoint</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Statuts -->
+<section class="block alt" id="statuts">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nos statuts</h2>
+      <p class="lead">Adoptés par l’Assemblée générale du 23 juin 2026, ils fixent le fonctionnement de la Fédération. L’essentiel en six points :</p>
+    </div>
+    <div class="statuts-grid">
+      <div class="art"><small>Article 2</small><h3>Objet</h3><p>Structurer et soutenir les CPTS, animer un réseau régional, renforcer leur lisibilité et les représenter auprès des partenaires.</p></div>
+      <div class="art"><small>Article 6</small><h3>Composition</h3><p>Collège I des CPTS avec voix délibérative, Collège II des partenaires avec voix consultative.</p></div>
+      <div class="art"><small>Articles 7 et 8</small><h3>Adhésion et cotisation</h3><p>Demande écrite agréée par le Conseil d’administration. Cotisation annuelle fixée par l’Assemblée générale.</p></div>
+      <div class="art"><small>Articles 10 à 12</small><h3>Assemblée générale</h3><p>Une voix par CPTS. Réunion en présentiel, à distance ou en hybride, convoquée au moins quinze jours avant.</p></div>
+      <div class="art"><small>Articles 13 à 16</small><h3>Conseil d’administration</h3><p>Jusqu’à 50 administrateurs issus des CPTS, deux au plus par CPTS et dix par département, élus pour trois ans.</p></div>
+      <div class="art"><small>Article 18</small><h3>Bureau</h3><p>Une co-présidence, un trésorier et un secrétaire, avec des fonctions réparties entre plusieurs CPTS.</p></div>
+    </div>
+    <div class="doc-row">
+      <p>Le texte intégral fait foi. Il précise aussi la perte de la qualité de membre, les ressources et la dissolution.</p>
+      <div class="cta-row">
+        <a class="btn btn-blue" href="docs/statuts-frcpts-hdf.pdf" target="_blank" rel="noopener">Consulter les statuts</a>
+        <a class="btn btn-ghost" href="docs/statuts-frcpts-hdf.pdf" download>Télécharger (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rejoindre -->
+<section class="block" id="adherer">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pourquoi rejoindre la Fédération ?</h2>
+      <p class="lead">Rejoindre la FRCPTS, c’est intégrer le réseau régional des CPTS et faire entendre la réalité de votre territoire.</p>
+    </div>
+    <div class="why">
+      <div class="why-item">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--sky)"/><path d="M17 24v8h6l13 8V16l-13 8z" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linejoin="round"/></svg>
+        <h3>Être représenté</h3>
+        <p>Porter la voix de votre CPTS auprès de l’ARS, des URPS, des DAC et de la Fédération nationale des CPTS.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--sky)"/><path d="M16 30l7 7 17-18" fill="none" stroke="var(--blue)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Être accompagné</h3>
+        <p>Bénéficier d’un appui concret : médiation, facilitation et accompagnement méthodologique de vos projets.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--sky)"/><g fill="none" stroke="var(--blue)" stroke-width="3"><circle cx="20" cy="22" r="5"/><circle cx="36" cy="22" r="5"/><circle cx="28" cy="36" r="5"/><path d="M24 25l2 7M32 25l-2 7M25 22h6"/></g></svg>
+        <h3>Être connecté</h3>
+        <p>Partager expériences, outils et informations avec les autres CPTS de la région.</p>
+      </div>
+    </div>
+
+    <div class="join">
+      <div class="join-left">
+        <h3>Deux collèges pour adhérer</h3>
+        <div class="college">
+          <b>Collège I · CPTS</b>
+          <p>Toute CPTS des Hauts-de-France ayant signé l’ACI, ou constituée en association avec une lettre d’intention validée ou en cours de validation. Voix délibérative.</p>
+        </div>
+        <div class="college">
+          <b>Collège II · Partenaires</b>
+          <p>Personnes morales, organismes, réseaux ou institutions utiles à notre objet. Voix consultative.</p>
+        </div>
+        <div class="fee"><strong>100 €</strong><span>cotisation annuelle fixée par l’AG du 23 juin 2026</span></div>
+      </div>
+      <div class="join-right">
+        <h3>Adhérer en 4 étapes</h3>
+        <ol class="steps">
+          <li><p><b>Téléchargez le bulletin d’adhésion 2026</b> et choisissez votre collège.</p></li>
+          <li><p><b>Désignez vos représentants</b> : jusqu’à deux titulaires et un suppléant.</p></li>
+          <li><p><b>Réglez la cotisation par virement</b>, en indiquant le nom de votre CPTS dans le motif. Les coordonnées bancaires figurent sur le bulletin.</p></li>
+          <li><p><b>Envoyez le bulletin signé</b> à admin.frcptshdf@gmail.com. Le Conseil d’administration agrée votre adhésion.</p></li>
+        </ol>
+        <div class="cta-row">
+          <a class="btn btn-blue" href="docs/bulletin-adhesion-2026.pdf" download>Télécharger le bulletin</a>
+          <a class="btn btn-ghost" href="mailto:admin.frcptshdf@gmail.com?subject=Demande%20d%E2%80%99adh%C3%A9sion%20FRCPTS%20HdF">Envoyer ma demande</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Actualités -->
+<section class="block alt" id="actualites">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Nos actualités</h2>
+      <p class="lead">Suivez la vie de la Fédération au fil des mois, et retrouvez chaque publication sur notre page LinkedIn.</p>
+    </div>
+    <div class="news">
+      <article class="post feature">
+        <time datetime="2026-09-09">9 et 10 septembre 2026</time>
+        <h3>Auditions de l’IGAS à Arras</h3>
+        <p>La Fédération et plusieurs CPTS de la région ont porté la voix des CPTS des Hauts-de-France auprès de la mission IGAS : pilotage, financement, maturité des structures, réalités territoriales.</p>
+        <a href="https://www.linkedin.com/company/f%C3%A9d%C3%A9ration-r%C3%A9gionale-des-cpts-hauts-de-france/" target="_blank" rel="noopener">Lire sur LinkedIn</a>
+      </article>
+      <article class="post">
+        <time datetime="2026-07">Été 2026</time>
+        <h3>Grande enquête territoriale</h3>
+        <p>Première action concrète : une enquête auprès de toutes les CPTS de la région pour mieux connaître leurs réalités, leurs réussites et leurs défis, et construire des accompagnements adaptés.</p>
+        <a href="https://www.linkedin.com/company/f%C3%A9d%C3%A9ration-r%C3%A9gionale-des-cpts-hauts-de-france/" target="_blank" rel="noopener">Lire sur LinkedIn</a>
+      </article>
+      <article class="post">
+        <time datetime="2026-05-26">26 mai 2026</time>
+        <h3>Naissance de la Fédération</h3>
+        <p>31 CPTS créent la FRCPTS HdF pour créer du lien, accompagner les équipes de terrain et porter une voix régionale commune.</p>
+        <a href="https://www.linkedin.com/company/f%C3%A9d%C3%A9ration-r%C3%A9gionale-des-cpts-hauts-de-france/" target="_blank" rel="noopener">Lire sur LinkedIn</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Agenda -->
+<section class="block" id="agenda">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Agenda : nos évènements</h2>
+      <p class="lead">Les rendez-vous auxquels la Fédération participe, et les chantiers sur lesquels elle est mobilisée.</p>
+    </div>
+    <div class="timeline">
+      <article class="event">
+        <div class="when">10 décembre 2026<small>Lille</small></div>
+        <div><h3>Tour de France des CPTS <span class="tag">À venir</span></h3><p>Étape lilloise du Tour de France des CPTS : la Fédération participe activement au comité de pilotage.</p></div>
+      </article>
+      <article class="event">
+        <div class="when">En cours<small>Région</small></div>
+        <div><h3>ARS et Inter-URPS</h3><p>Échanges avec l’ARS et l’Inter-URPS pour présenter la Fédération et construire les premières collaborations.</p></div>
+      </article>
+      <article class="event">
+        <div class="when">En cours<small>Nord</small></div>
+        <div><h3>PCR « Enfance protégée »</h3><p>Suivi du parcours coordonné renforcé piloté dans le Nord, en lien avec l’Inter-CPTS du Nord et les DAC.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Travaillons ensemble -->
+<section class="block alt" id="ensemble">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Travaillons ensemble</h2>
+      <p class="lead">CPTS, partenaires ou habitants : chacun a sa place autour de l’exercice coordonné.</p>
+    </div>
+    <div class="together">
+      <a class="aud" href="#adherer">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M8 22L24 8l16 14v18H8z"/><path d="M20 26h8M24 22v8"/></svg>
+        <h3>Vous êtes une CPTS ?</h3>
+        <p>Adhérez et rejoignez le réseau régional.</p>
+        <span class="go">Adhérer à la Fédération</span>
+      </a>
+      <a class="aud" href="mailto:admin.frcptshdf@gmail.com?subject=Partenariat%20FRCPTS%20HdF">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24l8-8 8 4 6-4 14 8"/><path d="M14 28l6 6c2 2 4 2 6 0l8-8"/><path d="M22 20l-6 6"/></svg>
+        <h3>Vous êtes un partenaire ?</h3>
+        <p>Associez-vous à nos travaux au sein du Collège II.</p>
+        <span class="go">Nous écrire</span>
+      </a>
+      <a class="aud" href="https://www.fcpts.org/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 42s-14-12-14-24a14 14 0 0 1 28 0c0 12-14 24-14 24z"/><circle cx="24" cy="18" r="5"/></svg>
+        <h3>Vous êtes un citoyen ?</h3>
+        <p>Découvrez les CPTS près de chez vous.</p>
+        <span class="go">Trouver ma CPTS</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Voix collective -->
+<section class="block deep">
+  <div class="wrap voice">
+    <blockquote>Une parole collective pour les CPTS, entendue à l’échelle de toute la région.</blockquote>
+    <div>
+      <p>La Fédération renforce la lisibilité et la légitimité des CPTS à l’échelle régionale et porte leur voix auprès des partenaires, en complémentarité avec les acteurs existants.</p>
+      <ul class="partners" aria-label="Acteurs avec lesquels la Fédération travaille en complémentarité">
+        <li>Union Régionale des URPS</li>
+        <li>FEMAS HDF</li>
+        <li>France Assos Santé</li>
+        <li>Fédération Nationale des CPTS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="block" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Contactez la Fédération</h2>
+      <p class="lead" style="margin-top:1.2rem">Une question sur l’adhésion, un projet à partager, une demande de partenariat ? Écrivez-nous, le bureau vous répond.</p>
+      <div class="cta-row" style="margin-top:1.8rem">
+        <a class="btn btn-sun" href="mailto:admin.frcptshdf@gmail.com">Nous écrire</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/company/f%C3%A9d%C3%A9ration-r%C3%A9gionale-des-cpts-hauts-de-france/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21H9z"/></svg>
+          Suivre sur LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <dl>
+        <div><dt>Siège social</dt><dd>7 rue du Général-de-Gaulle<br>62320 Acheville</dd></div>
+        <div><dt>Courriel</dt><dd><a href="mailto:admin.frcptshdf@gmail.com">admin.frcptshdf@gmail.com</a></dd></div>
+        <div><dt>Documents</dt><dd><a href="docs/bulletin-adhesion-2026.pdf" download>Bulletin d’adhésion 2026</a><br><a href="docs/statuts-frcpts-hdf.pdf">Statuts de la Fédération</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Fédération Régionale des CPTS Hauts-de-France · Association loi 1901</span>
+    <button class="theme-btn" type="button" id="themeBtn">Changer de thème</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Menu mobile
+  var btn=document.querySelector('.menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
+
+  // Pause de l’orbite
+  var stage=document.getElementById('orbit'), t=document.getElementById('orbitToggle');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){t.hidden=true;}
+  t.addEventListener('click',function(){
+    var p=stage.classList.toggle('paused');
+    t.setAttribute('aria-pressed',p);
+    t.querySelector('span').textContent=p?'Relancer':'Mettre en pause';
+  });
+
+  // Thème clair / sombre
+  var root=document.documentElement, key='frcpts-theme';
+  try{var saved=localStorage.getItem(key); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
