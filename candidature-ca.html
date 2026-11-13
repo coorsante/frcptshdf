@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Candidature au Conseil d’administration · FRCPTS Hauts-de-France</title>
+<meta name="description" content="Acte de candidature au Conseil d’administration de la Fédération Régionale des CPTS Hauts-de-France, Collège I (CPTS) et Collège II (partenaires).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230E47B0'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0E47B0; --blue-strong:#0A3687; --navy:#0A2463; --ink:#13203D; --muted:#4A5878;
+  --sky:#EAF1FC; --sky-2:#DCE7FA; --paper:#FFFFFF; --sun:#FFC83D; --sun-ink:#3A2A00;
+  --line:#C9D7F0; --on-blue:#FFFFFF; --green:#1D7A5A; --green-bg:#E8F5EF; --err:#C2271D;
+  --shadow:0 18px 40px -22px rgba(10,36,99,.45);
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --blue:#6E9CFF; --blue-strong:#9DBBFF; --navy:#0B1A3F; --ink:#E7EDFA; --muted:#AEBBD8;
+    --sky:#0F1F45; --sky-2:#16295A; --paper:#081430; --line:#24386A; --on-blue:#081430;
+    --green:#5FD3A6; --green-bg:#0E2E26; --err:#FF8A80; --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --blue:#6E9CFF; --blue-strong:#9DBBFF; --navy:#0B1A3F; --ink:#E7EDFA; --muted:#AEBBD8;
+  --sky:#0F1F45; --sky-2:#16295A; --paper:#081430; --line:#24386A; --on-blue:#081430;
+  --green:#5FD3A6; --green-bg:#0E2E26; --err:#FF8A80; --shadow:0 18px 40px -22px rgba(0,0,0,.7); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.015em}
+p{margin:0 0 1em}
+
+.site-header{background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:68px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand svg{width:40px;height:40px}
+.brand b{font-family:var(--display);font-size:1.1rem;font-weight:800;display:block;line-height:1}
+.brand span{font-size:.8rem;color:var(--muted)}
+.back{font-weight:700;text-decoration:none;font-size:.95rem}
+.back:hover{text-decoration:underline}
+
+.intro{padding:clamp(2rem,6vw,3.5rem) 0 1.5rem}
+.kicker{display:inline-block;background:var(--sun);color:#3A2A00;font-weight:700;font-size:.85rem;padding:.25rem .75rem;border-radius:999px;margin-bottom:1rem}
+.intro h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:.8rem}
+.intro .lead{color:var(--muted);font-size:1.12rem;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem;padding:0;list-style:none}
+.facts li{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.93rem}
+.facts b{color:var(--blue)}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1.5rem 0 1.2rem}
+.tab{all:unset;cursor:pointer;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:1rem 1.2rem;display:block}
+.tab b{display:block;font-family:var(--display);font-size:1.15rem}
+.tab span{font-size:.9rem;color:var(--muted)}
+.tab[aria-selected="true"]{border-color:var(--blue);box-shadow:var(--shadow)}
+.tab[data-c="2"][aria-selected="true"]{border-color:var(--green)}
+.tab:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+@media (max-width:560px){.tabs{grid-template-columns:1fr}}
+
+form{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(1.2rem,4vw,2.4rem);box-shadow:var(--shadow);margin-bottom:3rem}
+.college-head{border-radius:14px;padding:.8rem 1rem;margin-bottom:.5rem;background:var(--sky);color:var(--blue)}
+.college-head b{font-family:var(--display);font-size:1.2rem;display:block}
+.college-head span{font-size:.92rem;font-style:italic}
+.c2 .college-head{background:var(--green-bg);color:var(--green)}
+fieldset{border:0;padding:0;margin:1.8rem 0 0;min-width:0}
+legend{font-family:var(--display);font-weight:800;font-size:1.05rem;text-transform:uppercase;letter-spacing:.02em;color:var(--blue);border-bottom:2px solid var(--blue);width:100%;padding-bottom:.3rem;margin-bottom:.4rem}
+.c2 legend{color:var(--green);border-color:var(--green)}
+.sub{font-weight:700;margin:1rem 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+.f{margin-top:.8rem}
+label.l{display:block;font-weight:700;font-size:.95rem;margin-bottom:.25rem}
+.req{color:var(--err)}
+.hint{display:block;font-size:.88rem;color:var(--muted);font-style:italic;margin:-.1rem 0 .35rem}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:.6rem .75rem}
+input:focus,textarea:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--blue) 25%,transparent)}
+textarea{min-height:120px;resize:vertical}
+.choices{display:grid;gap:.35rem;margin-top:.3rem}
+.choices.two{grid-template-columns:1fr 1fr;gap:.35rem 1rem}
+@media (max-width:600px){.choices.two{grid-template-columns:1fr}}
+.choice{display:flex;gap:.55rem;align-items:flex-start;font-size:.98rem;cursor:pointer}
+.choice input{width:18px;height:18px;margin:.2rem 0 0;flex:none;accent-color:var(--blue)}
+.c2 .choice input{accent-color:var(--green)}
+.other{margin-top:.5rem}
+.note{background:var(--sky);border-left:4px solid var(--blue);border-radius:8px;padding:.6rem .9rem;font-size:.92rem;color:var(--ink);margin-top:.7rem}
+.c2 .note{background:var(--green-bg);border-color:var(--green)}
+.eng{display:grid;gap:.8rem;margin-top:.6rem}
+.submit-row{margin-top:2rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:700 1rem/1 var(--body);text-decoration:none;padding:1rem 1.5rem;border-radius:999px;background:var(--sun);color:#3A2A00}
+.btn:hover{background:#FFD566}
+.btn[disabled]{opacity:.6;cursor:wait}
+.small{font-size:.86rem;color:var(--muted)}
+.status{margin-top:1rem;padding:.9rem 1rem;border-radius:12px;font-weight:700}
+.status.ok{background:var(--green-bg);color:var(--green)}
+.status.ko{background:color-mix(in srgb,var(--err) 12%,var(--paper));color:var(--err)}
+.hp{position:absolute;left:-9999px}
+.pdf{margin:0 0 3rem;font-size:.95rem;color:var(--muted)}
+footer{background:var(--navy);color:#C3D0EC;padding:2rem 0;font-size:.9rem}
+footer a{color:#fff}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="FRCPTS Hauts-de-France, accueil">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#0E47B0"/><path d="M26 14h12v12h12v12H38v12H26V38H14V26h12z" fill="#fff"/></svg>
+      <div><b>FRCPTS</b><span>Hauts-de-France</span></div>
+    </a>
+    <a class="back" href="index.html#gouvernance">← Retour au site</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <span class="kicker">Appel à candidatures</span>
+    <h1>Candidature au Conseil d’administration</h1>
+    <p class="lead">2ème Assemblée générale de la Fédération Régionale des CPTS Hauts-de-France. Choisissez votre collège, remplissez le formulaire et envoyez-le en ligne : il arrive directement dans la boîte de la Fédération.</p>
+    <ul class="facts">
+      <li>Assemblée générale : <b>10 décembre 2026</b></li>
+      <li>Date limite : <b>mardi 8 décembre 2026</b></li>
+    </ul>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Choix du collège">
+    <button class="tab" role="tab" id="tab1" data-c="1" aria-controls="form1" aria-selected="true"><b>Collège I · CPTS</b><span>Voix délibérative</span></button>
+    <button class="tab" role="tab" id="tab2" data-c="2" aria-controls="form2" aria-selected="false" tabindex="-1"><b>Collège II · Partenaires</b><span>Voix consultative</span></button>
+  </div>
+
+  <!-- ============ COLLÈGE I ============ -->
+  <form id="form1" class="c1" role="tabpanel" aria-labelledby="tab1" action="https://formsubmit.co/contact@frcpts-hdf.fr" method="POST">
+    <input type="hidden" name="_subject" value="Candidature CA – Collège I (CPTS) – FRCPTS HdF">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="Collège" value="Collège I – CPTS">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="college-head"><b>Collège I – CPTS</b><span>Réservé aux Communautés Professionnelles Territoriales de Santé (voix délibérative)</span></div>
+
+    <fieldset>
+      <legend>1. Identité des candidats</legend>
+      <p class="hint" style="margin:0">1 titulaire et 1 suppléant</p>
+      <p class="sub">Titulaire</p>
+      <div class="grid">
+        <div class="f"><label class="l" for="t_nom">Nom <span class="req">*</span></label><input type="text" id="t_nom" name="Titulaire – Nom" required autocomplete="family-name"></div>
+        <div class="f"><label class="l" for="t_prenom">Prénom <span class="req">*</span></label><input type="text" id="t_prenom" name="Titulaire – Prénom" required autocomplete="given-name"></div>
+        <div class="f"><label class="l" for="t_mail">E-mail <span class="req">*</span></label><input type="email" id="t_mail" name="email" required autocomplete="email"></div>
+        <div class="f"><label class="l" for="t_tel">Téléphone</label><input type="tel" id="t_tel" name="Titulaire – Téléphone" autocomplete="tel"></div>
+      </div>
+      <div class="f"><label class="l" for="t_fct">Fonction <span class="req">*</span></label><input type="text" id="t_fct" name="Titulaire – Fonction" required></div>
+
+      <p class="sub" style="margin-top:1.4rem">Suppléant</p>
+      <div class="grid">
+        <div class="f"><label class="l" for="s_nom">Nom <span class="req">*</span></label><input type="text" id="s_nom" name="Suppléant – Nom" required></div>
+        <div class="f"><label class="l" for="s_prenom">Prénom <span class="req">*</span></label><input type="text" id="s_prenom" name="Suppléant – Prénom" required></div>
+        <div class="f"><label class="l" for="s_mail">E-mail <span class="req">*</span></label><input type="email" id="s_mail" name="Suppléant – E-mail" required></div>
+        <div class="f"><label class="l" for="s_tel">Téléphone</label><input type="tel" id="s_tel" name="Suppléant – Téléphone"></div>
+      </div>
+      <div class="f"><label class="l" for="s_fct">Fonction <span class="req">*</span></label><input type="text" id="s_fct" name="Suppléant – Fonction" required></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. CPTS représentée</legend>
+      <div class="grid">
+        <div class="f"><label class="l" for="cpts">Nom de la CPTS <span class="req">*</span></label><input type="text" id="cpts" name="Nom de la CPTS" required></div>
+        <div class="f"><label class="l" for="dep1">Département <span class="req">*</span></label><input type="text" id="dep1" name="Département" required list="deps"></div>
+      </div>
+      <div class="f" role="radiogroup" aria-labelledby="statutL">
+        <span class="l" id="statutL" style="display:block;font-weight:700;font-size:.95rem">Statut de la CPTS <span class="req">*</span></span>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="Statut de la CPTS" value="ACI signé" required> ACI signé</label>
+          <label class="choice"><input type="radio" name="Statut de la CPTS" value="Association constituée avec lettre d'intention validée"> Association constituée avec lettre d’intention validée</label>
+          <label class="choice"><input type="radio" name="Statut de la CPTS" value="Lettre d'intention en cours de validation"> Lettre d’intention en cours de validation</label>
+        </div>
+      </div>
+      <div class="f">
+        <span style="display:block;font-weight:700;font-size:.95rem">Mandat de la CPTS <span class="req">*</span></span>
+        <label class="choice" style="margin-top:.3rem"><input type="checkbox" name="Mandat de la CPTS" value="Oui – mandaté·e expressément par la CPTS" required> Je confirme que ma CPTS m’a expressément mandaté·e pour cette candidature</label>
+      </div>
+      <div class="f"><label class="l" for="sign">Nom et qualité du signataire du mandat au sein de la CPTS</label><input type="text" id="sign" name="Signataire du mandat"></div>
+      <p class="note">Le mandat écrit de votre CPTS devra être remis au bureau de la Fédération avant ou lors de l’Assemblée générale.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Motivation et disponibilité</legend>
+      <div class="f"><label class="l" for="motiv1">Motivation à siéger au Conseil d’administration <span class="req">*</span></label>
+        <span class="hint">En quelques lignes, expliquez ce qui vous motive à rejoindre le CA de la Fédération.</span>
+        <textarea id="motiv1" name="Motivation" required></textarea></div>
+      <div class="f">
+        <span style="display:block;font-weight:700;font-size:.95rem">Compétences ou domaines d’intérêt</span>
+        <span class="hint">Plusieurs choix possibles</span>
+        <div class="choices two" data-group="Compétences">
+          <label class="choice"><input type="checkbox" value="Numérique / SI de santé"> Numérique / SI de santé</label>
+          <label class="choice"><input type="checkbox" value="Communication"> Communication</label>
+          <label class="choice"><input type="checkbox" value="Finances / gestion"> Finances / gestion</label>
+          <label class="choice"><input type="checkbox" value="Relations institutionnelles"> Relations institutionnelles</label>
+          <label class="choice"><input type="checkbox" value="Coordination pluriprofessionnelle"> Coordination pluriprofessionnelle</label>
+          <label class="choice"><input type="checkbox" value="Prévention / santé publique"> Prévention / santé publique</label>
+          <label class="choice"><input type="checkbox" value="Formation / pédagogie"> Formation / pédagogie</label>
+        </div>
+        <input type="hidden" name="Compétences">
+        <div class="other"><label class="l" for="autre1" style="font-weight:400">Autre (préciser)</label><input type="text" id="autre1" name="Compétences – autre"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Ambition de rôle (optionnel)</legend>
+      <span class="hint">Cette information est recueillie à titre indicatif pour faciliter l’organisation du bureau lors de l’AG.</span>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="Ambition de rôle" value="Candidature au CA uniquement"> Candidature au CA uniquement</label>
+        <label class="choice"><input type="radio" name="Ambition de rôle" value="Intérêt pour la présidence / co-présidence"> Intérêt pour la présidence / co-présidence</label>
+        <label class="choice"><input type="radio" name="Ambition de rôle" value="Intérêt pour la trésorerie"> Intérêt pour la trésorerie</label>
+        <label class="choice"><input type="radio" name="Ambition de rôle" value="Intérêt pour le secrétariat"> Intérêt pour le secrétariat</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Engagements</legend>
+      <div class="eng">
+        <label class="choice"><input type="checkbox" name="Engagement – statuts" value="Oui" required> <span>J’ai pris connaissance des statuts de la Fédération Régionale des CPTS – Hauts-de-France et j’en accepte les termes. <span class="req">*</span></span></label>
+        <label class="choice"><input type="checkbox" name="Engagement – incompatibilité" value="Oui" required> <span>Je confirme qu’aucune incompatibilité ne s’oppose à ma candidature au Conseil d’administration. <span class="req">*</span></span></label>
+      </div>
+      <div class="grid">
+        <div class="f"><label class="l" for="lieu1">Fait à <span class="req">*</span></label><input type="text" id="lieu1" name="Fait à" required></div>
+        <div class="f"><label class="l" for="sig1">Signature (nom et prénom) <span class="req">*</span></label><input type="text" id="sig1" name="Signature" required></div>
+      </div>
+    </fieldset>
+
+    <div class="submit-row">
+      <button class="btn" type="submit">Envoyer ma candidature</button>
+      <span class="small"><span class="req">*</span> Champs obligatoires</span>
+    </div>
+    <div class="status" role="status" aria-live="polite" hidden></div>
+  </form>
+
+  <!-- ============ COLLÈGE II ============ -->
+  <form id="form2" class="c2" role="tabpanel" aria-labelledby="tab2" action="https://formsubmit.co/contact@frcpts-hdf.fr" method="POST" hidden>
+    <input type="hidden" name="_subject" value="Candidature CA – Collège II (Partenaires) – FRCPTS HdF">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="Collège" value="Collège II – Partenaires">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="college-head"><b>Collège II – Partenaires</b><span>Réservé aux personnes morales partenaires (voix consultative)</span></div>
+
+    <fieldset>
+      <legend>1. Identité du candidat</legend>
+      <div class="grid">
+        <div class="f"><label class="l" for="p_nom">Nom <span class="req">*</span></label><input type="text" id="p_nom" name="Nom" required autocomplete="family-name"></div>
+        <div class="f"><label class="l" for="p_prenom">Prénom <span class="req">*</span></label><input type="text" id="p_prenom" name="Prénom" required autocomplete="given-name"></div>
+        <div class="f"><label class="l" for="p_mail">E-mail <span class="req">*</span></label><input type="email" id="p_mail" name="email" required autocomplete="email"></div>
+        <div class="f"><label class="l" for="p_tel">Téléphone</label><input type="tel" id="p_tel" name="Téléphone" autocomplete="tel"></div>
+      </div>
+      <div class="f"><label class="l" for="p_fct">Fonction au sein de l’organisation <span class="req">*</span></label><input type="text" id="p_fct" name="Fonction" required></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Organisation représentée</legend>
+      <div class="f"><label class="l" for="org">Dénomination de l’organisation <span class="req">*</span></label><input type="text" id="org" name="Organisation" required></div>
+      <div class="f" role="radiogroup" aria-labelledby="typeL">
+        <span id="typeL" style="display:block;font-weight:700;font-size:.95rem">Type de structure <span class="req">*</span></span>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="Type de structure" value="Organisme public ou para-public" required> Organisme public ou para-public</label>
+          <label class="choice"><input type="radio" name="Type de structure" value="Association / réseau de santé"> Association / réseau de santé</label>
+          <label class="choice"><input type="radio" name="Type de structure" value="Institution de formation ou de recherche"> Institution de formation ou de recherche</label>
+          <label class="choice"><input type="radio" name="Type de structure" value="Collectivité territoriale"> Collectivité territoriale</label>
+          <label class="choice"><input type="radio" name="Type de structure" value="Autre"> Autre (préciser ci-dessous)</label>
+        </div>
+        <div class="other"><input type="text" name="Type de structure – autre" aria-label="Autre type de structure, à préciser"></div>
+      </div>
+      <div class="f"><label class="l" for="dep2">Département / périmètre d’intervention</label><input type="text" id="dep2" name="Périmètre d'intervention" list="deps"></div>
+      <div class="f"><label class="l" for="objet">Objet / domaine d’expertise de l’organisation <span class="req">*</span></label>
+        <span class="hint">En quoi vos compétences ou votre objet sont-ils utiles à la réalisation de l’objet social de la Fédération ?</span>
+        <textarea id="objet" name="Objet / expertise" required></textarea></div>
+      <div class="f">
+        <span style="display:block;font-weight:700;font-size:.95rem">Mandat de l’organisation <span class="req">*</span></span>
+        <label class="choice" style="margin-top:.3rem"><input type="checkbox" name="Mandat de l'organisation" value="Oui – dûment mandaté·e" required> Je confirme être dûment mandaté·e par mon organisation pour déposer cette candidature</label>
+      </div>
+      <p class="note">Les membres du Collège II siègent avec voix consultative au CA. Ils participent aux travaux sans pouvoir décisionnaire sur la gouvernance des CPTS.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Motivation et disponibilité</legend>
+      <div class="f"><label class="l" for="motiv2">Motivation à siéger au Conseil d’administration <span class="req">*</span></label>
+        <span class="hint">En quelques lignes, expliquez en quoi votre organisation peut contribuer aux travaux de la Fédération.</span>
+        <textarea id="motiv2" name="Motivation" required></textarea></div>
+      <div class="f">
+        <span style="display:block;font-weight:700;font-size:.95rem">Compétences ou domaines d’expertise à mettre au service de la Fédération</span>
+        <span class="hint">Plusieurs choix possibles</span>
+        <div class="choices two" data-group="Compétences">
+          <label class="choice"><input type="checkbox" value="Numérique / SI de santé"> Numérique / SI de santé</label>
+          <label class="choice"><input type="checkbox" value="Communication"> Communication</label>
+          <label class="choice"><input type="checkbox" value="Finances / gestion"> Finances / gestion</label>
+          <label class="choice"><input type="checkbox" value="Relations institutionnelles"> Relations institutionnelles</label>
+          <label class="choice"><input type="checkbox" value="Coordination pluriprofessionnelle"> Coordination pluriprofessionnelle</label>
+          <label class="choice"><input type="checkbox" value="Prévention / santé publique"> Prévention / santé publique</label>
+          <label class="choice"><input type="checkbox" value="Formation / pédagogie"> Formation / pédagogie</label>
+          <label class="choice"><input type="checkbox" value="Recherche / évaluation"> Recherche / évaluation</label>
+        </div>
+        <input type="hidden" name="Compétences">
+        <div class="other"><label class="l" for="autre2" style="font-weight:400">Autre (préciser)</label><input type="text" id="autre2" name="Compétences – autre"></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Engagements</legend>
+      <div class="eng">
+        <label class="choice"><input type="checkbox" name="Engagement – statuts" value="Oui" required> <span>J’ai pris connaissance des statuts de la Fédération Régionale des CPTS – Hauts-de-France et j’en accepte les termes. <span class="req">*</span></span></label>
+        <label class="choice"><input type="checkbox" name="Engagement – principes" value="Oui" required> <span>Je confirme que mon organisation adhère aux principes directeurs de la Fédération (autonomie des CPTS, non-substitution, indépendance) et qu’aucune incompatibilité ne s’oppose à cette candidature. <span class="req">*</span></span></label>
+      </div>
+      <div class="grid">
+        <div class="f"><label class="l" for="lieu2">Fait à <span class="req">*</span></label><input type="text" id="lieu2" name="Fait à" required></div>
+        <div class="f"><label class="l" for="sig2">Signature (nom et prénom) <span class="req">*</span></label><input type="text" id="sig2" name="Signature" required></div>
+      </div>
+      <p class="note">Les membres du Collège II siègent avec voix consultative, dans la limite de 5 administrateurs partenaires.</p>
+    </fieldset>
+
+    <div class="submit-row">
+      <button class="btn" type="submit">Envoyer ma candidature</button>
+      <span class="small"><span class="req">*</span> Champs obligatoires</span>
+    </div>
+    <div class="status" role="status" aria-live="polite" hidden></div>
+  </form>
+
+  <datalist id="deps"><option value="Aisne (02)"><option value="Nord (59)"><option value="Oise (60)"><option value="Pas-de-Calais (62)"><option value="Somme (80)"></datalist>
+
+  <p class="pdf">Vous préférez le papier ? Téléchargez le formulaire <a href="docs/candidature-ca-college-1.pdf" download>Collège I (PDF)</a> ou <a href="docs/candidature-ca-college-2.pdf" download>Collège II (PDF)</a> et renvoyez-le signé à <a href="mailto:contact@frcpts-hdf.fr">contact@frcpts-hdf.fr</a> avant le 8 décembre 2026.</p>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year">2026</span> Fédération Régionale des CPTS Hauts-de-France · <a href="mailto:contact@frcpts-hdf.fr">contact@frcpts-hdf.fr</a></div>
+</footer>
+
+<script>
+(function(){
+  try{var t=localStorage.getItem('frcpts-theme'); if(t) document.documentElement.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Onglets
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function select(tab){
+    tabs.forEach(function(t){
+      var on=t===tab;
+      t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+    });
+    history.replaceState(null,'','#college-'+tab.dataset.c);
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t);});
+    t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+1)%2]; n.focus(); select(n);}
+    });
+  });
+  if(location.hash==='#college-2') select(tabs[1]);
+
+  // Envoi
+  document.querySelectorAll('form').forEach(function(form){
+    form.addEventListener('submit',function(e){
+      if(!window.fetch||!window.FormData) return; // envoi classique
+      e.preventDefault();
+      var grp=form.querySelector('[data-group]');
+      var vals=[].map.call(grp.querySelectorAll('input:checked'),function(i){return i.value;});
+      form.querySelector('input[type=hidden][name="Compétences"]').value=vals.join(', ');
+      var data=new FormData(form);
+      data.append('Date d\'envoi',new Date().toLocaleString('fr-FR'));
+      var btn=form.querySelector('button[type=submit]'), st=form.querySelector('.status');
+      btn.disabled=true; btn.textContent='Envoi en cours…'; st.hidden=true;
+      fetch('https://formsubmit.co/ajax/contact@frcpts-hdf.fr',{method:'POST',headers:{'Accept':'application/json'},body:data})
+        .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true') throw j; return j;});})
+        .then(function(){
+          form.reset();
+          st.className='status ok'; st.hidden=false;
+          st.textContent='Merci, votre candidature a bien été envoyée à la Fédération. Vous serez recontacté·e par le bureau.';
+          btn.textContent='Candidature envoyée';
+        })
+        .catch(function(){
+          st.className='status ko'; st.hidden=false;
+          st.textContent='L’envoi n’a pas abouti. Merci de réessayer, ou d’écrire à contact@frcpts-hdf.fr.';
+          btn.disabled=false; btn.textContent='Envoyer ma candidature';
+        });
+    });
+  });
+})();
+</script>
+</body>
+</html>
