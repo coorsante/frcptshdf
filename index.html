@@ -352,6 +352,21 @@ footer{background:var(--navy);color:#C3D0EC;padding:2.5rem 0;font-size:.93rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center}
 footer a{color:#fff}
 .theme-btn{background:none;border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:.45rem .9rem;font:700 .85rem/1 var(--body);cursor:pointer}
+/* Appel à candidatures CA */
+.ca-call{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem 1.6rem;align-items:center;background:var(--sun);color:var(--sun-ink);border-radius:24px;padding:clamp(1.3rem,3vw,1.9rem) clamp(1.3rem,3vw,2.2rem);margin-top:clamp(1rem,3vw,2rem);box-shadow:0 20px 44px -24px rgba(255,200,61,.9)}
+.ca-call .ca-date{font-family:var(--display);font-weight:800;text-align:center;background:#fff;color:var(--navy);border-radius:16px;padding:.5rem .9rem;line-height:1}
+.ca-call .ca-date b{display:block;font-size:2.4rem}
+.ca-call .ca-date small{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.ca-call h3{color:var(--sun-ink);font-size:clamp(1.3rem,2.4vw,1.7rem);margin-bottom:.35rem}
+.deep .ca-call p{color:var(--sun-ink);margin:0;font-size:.98rem}
+.ca-call .cta-row .btn-blue{background:var(--navy);color:#fff}
+.ca-call .cta-row .btn-blue:hover{background:#000}
+.ca-call .cta-row .btn-ghost{color:var(--sun-ink);box-shadow:inset 0 0 0 2px var(--sun-ink)}
+@media (max-width:860px){.ca-call{grid-template-columns:auto 1fr}.ca-call .cta-row{grid-column:1/-1}}
+@media (max-width:520px){.ca-call{grid-template-columns:1fr}.ca-call .ca-date{justify-self:start}}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.2rem;padding:.4rem .9rem;border-radius:999px;background:var(--sky);border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:.92rem;text-decoration:none}
+.hero-pill i{font-style:normal;background:var(--sun);color:var(--sun-ink);border-radius:999px;padding:.1rem .55rem;font-size:.8rem}
+.hero-pill:hover{border-color:var(--blue)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
@@ -384,6 +399,7 @@ footer a{color:#fff}
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
+      <a class="hero-pill" href="#candidature-ca"><i>Nouveau</i> Candidatures au CA ouvertes jusqu’au 8 décembre</a>
       <h1>Les CPTS des Hauts-de-France avancent ensemble.</h1>
       <p class="lead">La Fédération Régionale des CPTS rassemble les Communautés Professionnelles Territoriales de Santé du Nord, du Pas-de-Calais, de la Somme, de l’Aisne et de l’Oise, pour s’entraider et porter une voix régionale commune.</p>
       <div class="cta-row">
@@ -556,6 +572,17 @@ footer a{color:#fff}
       <div class="member"><div class="avatar" aria-hidden="true">JH</div><div><b>Jean-Benoît Hebbinckuys</b><span>Trésorier</span></div></div>
       <div class="member"><div class="avatar" aria-hidden="true">MR</div><div><b>Mathieu Roussen</b><span>Trésorier adjoint</span></div></div>
     </div>
+    <aside class="ca-call" id="candidature-ca" aria-labelledby="caTitle">
+      <div class="ca-date" aria-hidden="true"><small>Déc.</small><b>10</b><small>2026</small></div>
+      <div>
+        <h3 id="caTitle">Appel à candidatures au Conseil d’administration</h3>
+        <p>Assemblée générale du 10 décembre 2026. CPTS (Collège I) et partenaires (Collège II) : candidatez en ligne avant le <strong>mardi 8 décembre 2026</strong>.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-blue" href="candidature-ca.html#college-1">Collège I · CPTS</a>
+        <a class="btn btn-ghost" href="candidature-ca.html#college-2">Collège II · Partenaires</a>
+      </div>
+    </aside>
   </div>
 </section>
 
